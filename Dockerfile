@@ -4,6 +4,7 @@ FROM ubuntu:16.04
 RUN apt-get update && \
     apt-get install -y git-core autoconf binutils-doc bison build-essential flex \
                        gettext ncurses-dev libssl-dev libreadline-dev zlib1g-dev && \
+    curl -sSL https://get.docker.com/ | bash && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install the latest Habitat
