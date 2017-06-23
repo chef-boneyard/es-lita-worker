@@ -5,5 +5,5 @@ A simple Docker image we use in our Lita instance to safely perform isolated ope
 
 * `hab`
 * `docker`
+* `ruby`
 * build-essentials (plus other compilation utilities)
-* ChefDK
