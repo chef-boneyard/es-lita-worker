@@ -18,10 +18,17 @@ RUN hab pkg install core/ruby/2.4.1 && \
     hab pkg binlink core/ruby/2.4.1 && \
     hab pkg install core/bundler && \
     hab pkg binlink core/bundler && \
-    hab pkg install core/cacerts && \
     echo 'gem: --no-rdoc --no-ri' >> /.gemrc
+
+# Install Node
+RUN hab pkg install core/node && \
+    hab pkg binlink core/node && \
+    npm install -g markdown-toc
 
 # Install Delivery CLI (via hab)
 # The core/delivery-cli is not up to date, hence why we're using tduffield (which is more recent)
 RUN hab pkg install tduffield/delivery-cli && \
     hab pkg binlink tduffield/delivery-cli
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
