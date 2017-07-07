@@ -9,3 +9,4 @@ A simple Docker image we use in our Lita instance to safely perform isolated ope
 * `node`
   * [`markdown-toc`](https://github.com/jonschlinkert/markdown-toc)
 * build-essentials (plus other compilation utilities)
+* `aws-cli`

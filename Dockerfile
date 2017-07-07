@@ -30,5 +30,9 @@ RUN hab pkg install core/node && \
 RUN hab pkg install tduffield/delivery-cli && \
     hab pkg binlink tduffield/delivery-cli
 
+# Install the AWS CLI
+RUN hab pkg install core/aws-cli && \
+    hab pkg binlink core/aws-cli
+
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
